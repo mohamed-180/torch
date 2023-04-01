@@ -43,6 +43,9 @@
     <loc>https://torch.mlverse.org/docs/dev/articles/memory-management.html</loc>
   </url>
   <url>
+    <loc>https://torch.mlverse.org/docs/dev/articles/modifying-source-code.html</loc>
+  </url>
+  <url>
     <loc>https://torch.mlverse.org/docs/dev/articles/python-to-r.html</loc>
   </url>
   <url>
@@ -119,6 +122,9 @@
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/contrib_sort_vertices.html</loc>
+  </url>
+  <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/cuda_amp_grad_scaler.html</loc>
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/cuda_current_device.html</loc>
@@ -338,6 +344,9 @@
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/load_state_dict.html</loc>
+  </url>
+  <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/local_autocast.html</loc>
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/lr_lambda.html</loc>
@@ -653,6 +662,9 @@
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/nn_sigmoid.html</loc>
+  </url>
+  <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/nn_silu.html</loc>
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/nn_smooth_l1_loss.html</loc>
@@ -973,6 +985,9 @@
     <loc>https://torch.mlverse.org/docs/dev/reference/nnf_sigmoid.html</loc>
   </url>
   <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/nnf_silu.html</loc>
+  </url>
+  <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/nnf_smooth_l1_loss.html</loc>
   </url>
   <url>
@@ -1016,6 +1031,9 @@
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/optim_adam.html</loc>
+  </url>
+  <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/optim_adamw.html</loc>
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/optim_asgd.html</loc>
@@ -1402,6 +1420,9 @@
     <loc>https://torch.mlverse.org/docs/dev/reference/torch_fft_fft.html</loc>
   </url>
   <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/torch_fft_fftfreq.html</loc>
+  </url>
+  <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/torch_fft_ifft.html</loc>
   </url>
   <url>
@@ -1463,6 +1484,9 @@
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/torch_ger.html</loc>
+  </url>
+  <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/torch_get_rng_state.html</loc>
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/torch_greater.html</loc>
