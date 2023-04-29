@@ -2,6 +2,7 @@ pandoc: 2.19.2
 pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
+  amp: amp.html
   memory-management: memory-management.html
   modifying-source-code: modifying-source-code.html
   distributions: distributions.html
@@ -19,7 +20,7 @@ articles:
   tensor-creation: tensor-creation.html
   torchscript: torchscript.html
   using-autograd: using-autograd.html
-last_built: 2023-04-01T16:28Z
+last_built: 2023-04-29T16:27Z
 urls:
   reference: https://torch.mlverse.org/docs/reference
   article: https://torch.mlverse.org/docs/articles

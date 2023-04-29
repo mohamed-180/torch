@@ -16,7 +16,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">torch</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.9.1.9001</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.10.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-advanced">
     <a class="dropdown-item" href="../articles/memory-management.html">Memory management</a>
     <a class="dropdown-item" href="../articles/modifying-source-code.html">Building locally</a>
+    <a class="dropdown-item" href="../articles/amp.html">Automatic Mixed Precision</a>
   </div>
 </li>
 <li class="nav-item">
@@ -84,20 +85,38 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="development version" id="torch-development-version">torch (development version)<a class="anchor" aria-label="anchor" href="#torch-development-version"></a></h2>
+<ul><li>Added <code>nn_utils_weight_norm</code> (<a href="https://github.com/mlverse/torch/issues/1025" class="external-link">#1025</a>)</li>
+<li>Started building LibLantern on macOS 11 instead of macOS12 for maximum compatibility. (<a href="https://github.com/mlverse/torch/issues/1026" class="external-link">#1026</a>)</li>
+<li>Added <code>CXXSTD</code> to Makevars to enable C+11 compilation options.</li>
+</ul></div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.10.0" id="torch-0100">torch 0.10.0<a class="anchor" aria-label="anchor" href="#torch-0100"></a></h2><p class="text-muted">CRAN release: 2023-04-13</p>
+<div class="section level3">
+<h3 id="breaking-changes-0-10-0">Breaking changes<a class="anchor" aria-label="anchor" href="#breaking-changes-0-10-0"></a></h3>
+<ul><li>Updated to LibTorch v1.13.1 (<a href="https://github.com/mlverse/torch/issues/977" class="external-link">#977</a>)</li>
+</ul></div>
+<div class="section level3">
+<h3 id="new-features-0-10-0">New features<a class="anchor" aria-label="anchor" href="#new-features-0-10-0"></a></h3>
 <ul><li>Provide pre-built binaries for torch using a GH Action workflow. (<a href="https://github.com/mlverse/torch/issues/975" class="external-link">#975</a>)</li>
-<li>Large refactoring of the build system. (<a href="https://github.com/mlverse/torch/issues/964" class="external-link">#964</a>)</li>
-<li>Use native symbol registration instead of dynamic lookup. (<a href="https://github.com/mlverse/torch/issues/976" class="external-link">#976</a>)</li>
-<li>Updated to LibTorch v1.13.1 (<a href="https://github.com/mlverse/torch/issues/977" class="external-link">#977</a>)</li>
 <li>Added <code><a href="../reference/nn_silu.html">nn_silu()</a></code> and <code><a href="../reference/nnf_silu.html">nnf_silu()</a></code>. (<a href="https://github.com/mlverse/torch/issues/985" class="external-link">#985</a>)</li>
 <li>Added support for deep cloning <code>nn_module</code>s. (<a href="https://github.com/mlverse/torch/issues/986" class="external-link">#986</a>)</li>
 <li>Added <code><a href="../reference/with_no_grad.html">local_no_grad()</a></code> and <code><a href="../reference/with_enable_grad.html">local_enable_grad()</a></code> as alternatives for the <code>with_</code> functions. (<a href="https://github.com/mlverse/torch/issues/990" class="external-link">#990</a>)</li>
 <li>Added <code>optim_adamw</code> optimizer. (<a href="https://github.com/mlverse/torch/issues/991" class="external-link">#991</a>)</li>
-<li>Returning lists of tensors to R is now much faster. (<a href="https://github.com/mlverse/torch/issues/993" class="external-link">#993</a>)</li>
-<li>Dataloaders now preserve the batch dimension when <code>batch_size=1</code> is used. (<a href="https://github.com/mlverse/torch/issues/994" class="external-link">#994</a>)</li>
 <li>Added support for automatic mixed precision (<a href="https://github.com/mlverse/torch/issues/996" class="external-link">#996</a>)</li>
 <li>Added functionality to temporarily modify the torch seed. (<a href="https://github.com/mlverse/torch/issues/999" class="external-link">#999</a>)</li>
 <li>Support for creating torch tensors from raw vectors and back. (<a href="https://github.com/mlverse/torch/issues/1003" class="external-link">#1003</a>)</li>
 </ul></div>
+<div class="section level3">
+<h3 id="bug-fixes-0-10-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-10-0"></a></h3>
+<ul><li>Dataloaders now preserve the batch dimension when <code>batch_size=1</code> is used. (<a href="https://github.com/mlverse/torch/issues/994" class="external-link">#994</a>)</li>
+</ul></div>
+<div class="section level3">
+<h3 id="internal-0-10-0">Internal<a class="anchor" aria-label="anchor" href="#internal-0-10-0"></a></h3>
+<ul><li>Large refactoring of the build system. (<a href="https://github.com/mlverse/torch/issues/964" class="external-link">#964</a>)</li>
+<li>Use native symbol registration instead of dynamic lookup. (<a href="https://github.com/mlverse/torch/issues/976" class="external-link">#976</a>)</li>
+<li>Returning lists of tensors to R is now much faster. (<a href="https://github.com/mlverse/torch/issues/993" class="external-link">#993</a>)</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.9.1" id="torch-091">torch 0.9.1<a class="anchor" aria-label="anchor" href="#torch-091"></a></h2><p class="text-muted">CRAN release: 2023-01-23</p>
 <div class="section level3">

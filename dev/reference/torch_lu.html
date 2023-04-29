@@ -20,7 +20,7 @@ is set to True."><meta name="robots" content="noindex"><!-- mathjax --><script s
     
     <a class="navbar-brand me-2" href="../index.html">torch</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.9.1.9001</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.10.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +58,7 @@ is set to True."><meta name="robots" content="noindex"><!-- mathjax --><script s
   <div class="dropdown-menu" aria-labelledby="dropdown-advanced">
     <a class="dropdown-item" href="../articles/memory-management.html">Memory management</a>
     <a class="dropdown-item" href="../articles/modifying-source-code.html">Building locally</a>
+    <a class="dropdown-item" href="../articles/amp.html">Automatic Mixed Precision</a>
   </div>
 </li>
 <li class="active nav-item">
@@ -129,19 +130,19 @@ elements in the tuple are Tensor, IntTensor. Default: NULL</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> torch_tensor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -2.0788  0.9078 -0.8356</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.0721  0.7485 -0.5427</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.0104 -0.9841  0.1583</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1.8712 -0.2764 -1.4033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.3193  1.3311  1.5025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.8816 -0.2518  0.2143</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (2,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.9112 -0.5691 -0.1815</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.1131  0.9315 -0.2998</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.8306  0.1659 -1.5632</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -1.6939  1.7882  1.0045</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.0519 -0.6921  0.1907</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.5046  0.0683 -0.4575</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [ CPUFloatType{2,3,3} ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> torch_tensor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3  3  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2  3  3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>  2  3  3</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [ CPUIntType{2,3} ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>

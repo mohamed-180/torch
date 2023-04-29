@@ -16,7 +16,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">torch</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.9.1.9001</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.10.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-advanced">
     <a class="dropdown-item" href="../articles/memory-management.html">Memory management</a>
     <a class="dropdown-item" href="../articles/modifying-source-code.html">Building locally</a>
+    <a class="dropdown-item" href="../articles/amp.html">Automatic Mixed Precision</a>
   </div>
 </li>
 <li class="active nav-item">
@@ -121,37 +122,37 @@ while keeping the original tensor shape.</p>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> torch_tensor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,1,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.3628 -0.7823</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.5732  0.2379</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.4310 -0.8320</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -1.0643  0.9254</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,2,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2.2606 -0.0871</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.0954  0.0034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.2786 -0.0592</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.4565  0.3959</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,3,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.0494 -0.0940</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1.7464  0.9276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.4982  3.2208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.8768 -0.7150</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,4,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1.3889 -0.7357</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -1.1353 -0.4125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.3827  1.4827</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -1.1627  1.5068</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [ CPUFloatType{1,4,2,2} ]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> torch_tensor</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,1,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.3628 -0.7823</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.5732  0.2379</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.4310 -0.8320</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -1.0643  0.9254</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,2,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -0.0494 -0.0940</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1.7464  0.9276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.4982  3.2208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.8768 -0.7150</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,3,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2.2606 -0.0871</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   0.0954  0.0034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.2786 -0.0592</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.4565  0.3959</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> (1,4,.,.) = </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1.3889 -0.7357</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  -1.1353 -0.4125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   0.3827  1.4827</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  -1.1627  1.5068</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [ CPUFloatType{1,4,2,2} ]</span>
 </code></pre></div>
     </div>

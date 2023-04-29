@@ -16,7 +16,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">torch</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.9.1.9001</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.10.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-advanced">
     <a class="dropdown-item" href="../articles/memory-management.html">Memory management</a>
     <a class="dropdown-item" href="../articles/modifying-source-code.html">Building locally</a>
+    <a class="dropdown-item" href="../articles/amp.html">Automatic Mixed Precision</a>
   </div>
 </li>
 <li class="active nav-item">
@@ -152,10 +153,10 @@ a real number, otherwise it should be an integer.</p>
 <span class="r-in"><span><span class="fu">torch_add</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> torch_tensor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4.5007  3.3437  2.4753  1.5702</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2.9927  1.8357  0.9673  0.0622</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2.3807  1.2237  0.3553 -0.5498</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2.6634  1.5064  0.6380 -0.2671</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0.5961  0.5951 -2.1147 -0.5605</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2.2215  2.2205 -0.4894  1.0648</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -0.0327 -0.0338 -2.7436 -1.1894</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2.1269  2.1259 -0.5839  0.9703</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [ CPUFloatType{4,4} ]</span>
 </code></pre></div>
     </div>

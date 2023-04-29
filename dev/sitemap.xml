@@ -10,6 +10,9 @@
     <loc>https://torch.mlverse.org/docs/dev/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://torch.mlverse.org/docs/dev/articles/amp.html</loc>
+  </url>
+  <url>
     <loc>https://torch.mlverse.org/docs/dev/articles/distributions.html</loc>
   </url>
   <url>
@@ -728,6 +731,9 @@
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/nn_utils_rnn_pad_sequence.html</loc>
+  </url>
+  <url>
+    <loc>https://torch.mlverse.org/docs/dev/reference/nn_utils_weight_norm.html</loc>
   </url>
   <url>
     <loc>https://torch.mlverse.org/docs/dev/reference/nnf_adaptive_avg_pool1d.html</loc>

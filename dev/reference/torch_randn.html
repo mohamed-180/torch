@@ -16,7 +16,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">torch</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.9.1.9001</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.10.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-advanced">
     <a class="dropdown-item" href="../articles/memory-management.html">Memory management</a>
     <a class="dropdown-item" href="../articles/modifying-source-code.html">Building locally</a>
+    <a class="dropdown-item" href="../articles/amp.html">Automatic Mixed Precision</a>
   </div>
 </li>
 <li class="active nav-item">
@@ -147,8 +148,8 @@ The shape of the tensor is defined by the variable argument <code>size</code>.</
 <span class="r-in"><span><span class="fu">torch_randn</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> torch_tensor</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> -0.1744 -0.7589  0.6063</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> -0.5024  0.1732 -0.6351</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0.4904  0.5975  0.0356</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0.5091 -0.6698  1.3521</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [ CPUFloatType{2,3} ]</span>
 </code></pre></div>
     </div>

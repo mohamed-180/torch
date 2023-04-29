@@ -34,7 +34,7 @@
     
     <a class="navbar-brand me-2" href="../../index.html">torch</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.9.1.9001</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">0.10.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,6 +73,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdown-advanced">
     <a class="dropdown-item" href="../../articles/memory-management.html">Memory management</a>
     <a class="dropdown-item" href="../../articles/modifying-source-code.html">Building locally</a>
+    <a class="dropdown-item" href="../../articles/amp.html">Automatic Mixed Precision</a>
   </div>
 </li>
 <li class="nav-item">
@@ -147,10 +148,9 @@
 <span><span class="va">model</span><span class="op">$</span><span class="va">parameters</span></span></code></pre></div>
 <pre><code><span><span class="co">## $w</span></span>
 <span><span class="co">## torch_tensor</span></span>
-<span><span class="co">## 0.01 *</span></span>
-<span><span class="co">## -3.2028</span></span>
-<span><span class="co">##  -31.0691</span></span>
-<span><span class="co">##   4.2163</span></span>
+<span><span class="co">## -0.3111</span></span>
+<span><span class="co">##  0.7540</span></span>
+<span><span class="co">## -0.1982</span></span>
 <span><span class="co">## [ CPUFloatType{3,1} ][ requires_grad = TRUE ]</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## $b</span></span>
@@ -161,10 +161,9 @@
 <code class="sourceCode R"><span><span class="co"># or individually</span></span>
 <span><span class="va">model</span><span class="op">$</span><span class="va">w</span></span></code></pre></div>
 <pre><code><span><span class="co">## torch_tensor</span></span>
-<span><span class="co">## 0.01 *</span></span>
-<span><span class="co">## -3.2028</span></span>
-<span><span class="co">##  -31.0691</span></span>
-<span><span class="co">##   4.2163</span></span>
+<span><span class="co">## -0.3111</span></span>
+<span><span class="co">##  0.7540</span></span>
+<span><span class="co">## -0.1982</span></span>
 <span><span class="co">## [ CPUFloatType{3,1} ][ requires_grad = TRUE ]</span></span></code></pre>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">model</span><span class="op">$</span><span class="va">b</span></span></code></pre></div>
@@ -179,16 +178,16 @@
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">y_pred</span></span></code></pre></div>
 <pre><code><span><span class="co">## torch_tensor</span></span>
-<span><span class="co">##  0.1961</span></span>
-<span><span class="co">##  0.6527</span></span>
-<span><span class="co">## -0.3466</span></span>
-<span><span class="co">##  0.3001</span></span>
-<span><span class="co">## -0.3621</span></span>
-<span><span class="co">##  0.3750</span></span>
-<span><span class="co">##  0.1215</span></span>
-<span><span class="co">## -0.6832</span></span>
-<span><span class="co">##  0.2475</span></span>
-<span><span class="co">##  0.0677</span></span>
+<span><span class="co">## -0.3619</span></span>
+<span><span class="co">## -0.2163</span></span>
+<span><span class="co">## -2.1189</span></span>
+<span><span class="co">##  0.1352</span></span>
+<span><span class="co">##  1.3542</span></span>
+<span><span class="co">## -0.4480</span></span>
+<span><span class="co">## -0.3015</span></span>
+<span><span class="co">## -0.3929</span></span>
+<span><span class="co">## -0.0888</span></span>
+<span><span class="co">##  1.7472</span></span>
 <span><span class="co">## [ CPUFloatType{10,1} ][ grad_fn = &lt;AddBackward0&gt; ]</span></span></code></pre>
   </main>
 </div>
