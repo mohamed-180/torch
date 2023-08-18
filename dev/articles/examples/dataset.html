@@ -177,22 +177,11 @@
 <span><span class="va">mtcars_dataset</span><span class="op">$</span><span class="fu">.getitem</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## $x</span></span>
 <span><span class="co">## torch_tensor</span></span>
-<span><span class="co">##    6.0000</span></span>
-<span><span class="co">##  160.0000</span></span>
-<span><span class="co">##  110.0000</span></span>
-<span><span class="co">##    3.9000</span></span>
-<span><span class="co">##    2.6200</span></span>
-<span><span class="co">##   16.4600</span></span>
-<span><span class="co">##    0.0000</span></span>
-<span><span class="co">##    1.0000</span></span>
-<span><span class="co">##    4.0000</span></span>
-<span><span class="co">##    4.0000</span></span>
-<span><span class="co">## [ CPUFloatType{10} ]</span></span>
+<span><span class="co">##    6.0000 160.0000 110.0000   3.9000   2.6200  16.4600   0.0000   1.0000   4.0000   4.0000[ CPUFloatType{10} ]</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## $y</span></span>
 <span><span class="co">## torch_tensor</span></span>
-<span><span class="co">##  21</span></span>
-<span><span class="co">## [ CPUFloatType{1} ]</span></span></code></pre>
+<span><span class="co">##  21[ CPUFloatType{1} ]</span></span></code></pre>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Given a dataset you can create a dataloader with</span></span>
 <span><span class="va">dl</span> <span class="op">&lt;-</span> <span class="fu"><a href="../../reference/dataloader.html">dataloader</a></span><span class="op">(</span><span class="va">mtcars_dataset</span>, batch_size <span class="op">=</span> <span class="fl">15</span>, shuffle <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>

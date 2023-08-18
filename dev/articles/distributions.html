@@ -137,32 +137,24 @@ module</a> which in turn is based on the TensorFlow <a href="https://arxiv.org/a
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span><span class="op">$</span><span class="fu">sample</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  0.6614</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{1} ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  0.6614[ CPUFloatType{1} ]</span></span></code></pre></div>
 <p>or, draw multiple samples:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span><span class="op">$</span><span class="fu">sample</span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  0.2669</span></span>
-<span><span class="co">#&gt;  0.0617</span></span>
-<span><span class="co">#&gt;  0.6213</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{3,1} ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  0.2669 0.0617 0.6213[ CPUFloatType{3,1} ]</span></span></code></pre></div>
 <p>We can evaluate the log probability of values:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span><span class="op">$</span><span class="fu">log_prob</span><span class="op">(</span><span class="fl">0</span><span class="op">)</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt; -0.9189</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{1} ]</span></span>
+<span><span class="co">#&gt; -0.9189[ CPUFloatType{1} ]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Log.html" class="external-link">log</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">dnorm</a></span><span class="op">(</span><span class="fl">0</span><span class="op">)</span><span class="op">)</span> <span class="co"># equivalent R code</span></span>
 <span><span class="co">#&gt; [1] -0.9189385</span></span></code></pre></div>
 <p>or, evaluate multiple log probabilities:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">n</span><span class="op">$</span><span class="fu">log_prob</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt; -0.9189</span></span>
-<span><span class="co">#&gt; -2.9189</span></span>
-<span><span class="co">#&gt; -8.9189</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{3} ]</span></span></code></pre></div>
+<span><span class="co">#&gt; -0.9189-2.9189-8.9189[ CPUFloatType{3} ]</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="multiple-distributions">Multiple distributions<a class="anchor" aria-label="anchor" href="#multiple-distributions"></a>
@@ -178,21 +170,12 @@ each element of the tensor.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">b</span><span class="op">$</span><span class="fu">sample</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  0</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{3} ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  0 1 1[ CPUFloatType{3} ]</span></span></code></pre></div>
 <p>or, a batch of <code>n</code> observations:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">b</span><span class="op">$</span><span class="fu">sample</span><span class="op">(</span><span class="fl">6</span><span class="op">)</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  0  0  1</span></span>
-<span><span class="co">#&gt;  0  1  1</span></span>
-<span><span class="co">#&gt;  0  0  1</span></span>
-<span><span class="co">#&gt;  0  1  1</span></span>
-<span><span class="co">#&gt;  0  1  1</span></span>
-<span><span class="co">#&gt;  0  0  1</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{6,3} ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  0  0  1 0  1  1 0  0  1 0  1  1 0  1  1 0  0  1[ CPUFloatType{6,3} ]</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="using-distributions-within-models">Using distributions within models<a class="anchor" aria-label="anchor" href="#using-distributions-within-models"></a>
@@ -255,18 +238,15 @@ some data</p>
 <code class="sourceCode R"><span><span class="va">model</span><span class="op">$</span><span class="va">parameters</span></span>
 <span><span class="co">#&gt; $linear.weight</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  2.1256</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{1,1} ][ requires_grad = TRUE ]</span></span>
+<span><span class="co">#&gt;  2.1256[ CPUFloatType{1,1} ][ requires_grad = TRUE ]</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $linear.bias</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  1.1215</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{1} ][ requires_grad = TRUE ]</span></span>
+<span><span class="co">#&gt;  1.1215[ CPUFloatType{1} ][ requires_grad = TRUE ]</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $scale</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  1.0461</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{1} ][ requires_grad = TRUE ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  1.0461[ CPUFloatType{1} ][ requires_grad = TRUE ]</span></span></code></pre></div>
 <p>and quickly compare with the <code><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm()</a></code> function:</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/glm.html" class="external-link">glm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">y</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>

@@ -305,19 +305,11 @@ first item:</p>
 <span><span class="va">tuxes</span><span class="op">$</span><span class="fu">.getitem</span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;     3.0000</span></span>
-<span><span class="co">#&gt;    39.1000</span></span>
-<span><span class="co">#&gt;    18.7000</span></span>
-<span><span class="co">#&gt;   181.0000</span></span>
-<span><span class="co">#&gt;  3750.0000</span></span>
-<span><span class="co">#&gt;     2.0000</span></span>
-<span><span class="co">#&gt;  2007.0000</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{7} ]</span></span>
+<span><span class="co">#&gt;     3.0000   39.1000   18.7000  181.0000 3750.0000    2.0000 2007.0000[ CPUFloatType{7} ]</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[2]]</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt; 1</span></span>
-<span><span class="co">#&gt; [ CPULongType{} ]</span></span></code></pre></div>
+<span><span class="co">#&gt; 1[ CPULongType{} ]</span></span></code></pre></div>
 <p>To be able to iterate over <code>tuxes</code>, we need a data loader
 (we override the default batch size of <code>1</code>):</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -334,27 +326,11 @@ dataset) will return the number of <code>batches</code> we have:</p>
 <span><span class="va">b</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;     3.0000    39.1000    18.7000   181.0000  3750.0000     2.0000  2007.0000</span></span>
-<span><span class="co">#&gt;     3.0000    39.5000    17.4000   186.0000  3800.0000     1.0000  2007.0000</span></span>
-<span><span class="co">#&gt;     3.0000    40.3000    18.0000   195.0000  3250.0000     1.0000  2007.0000</span></span>
-<span><span class="co">#&gt;     3.0000    36.7000    19.3000   193.0000  3450.0000     1.0000  2007.0000</span></span>
-<span><span class="co">#&gt;     3.0000    39.3000    20.6000   190.0000  3650.0000     2.0000  2007.0000</span></span>
-<span><span class="co">#&gt;     3.0000    38.9000    17.8000   181.0000  3625.0000     1.0000  2007.0000</span></span>
-<span><span class="co">#&gt;     3.0000    39.2000    19.6000   195.0000  4675.0000     2.0000  2007.0000</span></span>
-<span><span class="co">#&gt;     3.0000    41.1000    17.6000   182.0000  3200.0000     1.0000  2007.0000</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{8,7} ]</span></span>
+<span><span class="co">#&gt;     3.0000    39.1000    18.7000   181.0000  3750.0000     2.0000  2007.0000    3.0000    39.5000    17.4000   186.0000  3800.0000     1.0000  2007.0000    3.0000    40.3000    18.0000   195.0000  3250.0000     1.0000  2007.0000    3.0000    36.7000    19.3000   193.0000  3450.0000     1.0000  2007.0000    3.0000    39.3000    20.6000   190.0000  3650.0000     2.0000  2007.0000    3.0000    38.9000    17.8000   181.0000  3625.0000     1.0000  2007.0000    3.0000    39.2000    19.6000   195.0000  4675.0000     2.0000  2007.0000    3.0000    41.1000    17.6000   182.0000  3200.0000     1.0000  2007.0000[ CPUFloatType{8,7} ]</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[2]]</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt;  1</span></span>
-<span><span class="co">#&gt; [ CPULongType{8} ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 1 1 1 1 1 1 1[ CPULongType{8} ]</span></span></code></pre></div>
 <p>To train a network, we can use <code><a href="https://rdrr.io/pkg/coro/man/collect.html" class="external-link">coro::loop()</a></code> to iterate
 over batches.</p>
 <div class="section level3">
@@ -400,7 +376,7 @@ one-hot-encode or embed it.)</p>
 <span>  </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sprintf.html" class="external-link">sprintf</a></span><span class="op">(</span><span class="st">"Loss at epoch %d: %3f\n"</span>, <span class="va">epoch</span>, <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">l</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
-<span><span class="co">#&gt; Loss at epoch 1: 46110.715384</span></span>
+<span><span class="co">#&gt; Loss at epoch 1: 578.417955</span></span>
 <span><span class="co">#&gt; Loss at epoch 2: 2.068251</span></span>
 <span><span class="co">#&gt; Loss at epoch 3: 2.068251</span></span>
 <span><span class="co">#&gt; Loss at epoch 4: 2.068251</span></span>

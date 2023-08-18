@@ -163,9 +163,7 @@ respect to <code>x</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span><span class="op">$</span><span class="va">grad</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  0.2500  0.2500</span></span>
-<span><span class="co">#&gt;  0.2500  0.2500</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{2,2} ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  0.2500  0.2500 0.2500  0.2500[ CPUFloatType{2,2} ]</span></span></code></pre></div>
 <p>With a longer chain of computations, we can peek at how torch builds
 up a graph of backward operations.</p>
 <p>Here is a slightly more complex example. We call
@@ -218,23 +216,16 @@ will have their respective gradients created. Without our calls to
 <code class="sourceCode R"><span><span class="va">out</span><span class="op">$</span><span class="fu">backward</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">z</span><span class="op">$</span><span class="va">grad</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  0.2500  0.2500</span></span>
-<span><span class="co">#&gt;  0.2500  0.2500</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{2,2} ]</span></span>
+<span><span class="co">#&gt;  0.2500  0.2500 0.2500  0.2500[ CPUFloatType{2,2} ]</span></span>
 <span><span class="va">y</span><span class="op">$</span><span class="va">grad</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  4.6500  4.6500</span></span>
-<span><span class="co">#&gt;  4.6500  4.6500</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{2,2} ]</span></span>
+<span><span class="co">#&gt;  4.6500  4.6500 4.6500  4.6500[ CPUFloatType{2,2} ]</span></span>
 <span><span class="va">x2</span><span class="op">$</span><span class="va">grad</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  18.6000</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{1} ]</span></span>
+<span><span class="co">#&gt;  18.6000[ CPUFloatType{1} ]</span></span>
 <span><span class="va">x1</span><span class="op">$</span><span class="va">grad</span></span>
 <span><span class="co">#&gt; torch_tensor</span></span>
-<span><span class="co">#&gt;  14.4150  14.4150</span></span>
-<span><span class="co">#&gt;  14.4150  14.4150</span></span>
-<span><span class="co">#&gt; [ CPUFloatType{2,2} ]</span></span></code></pre></div>
+<span><span class="co">#&gt;  14.4150  14.4150 14.4150  14.4150[ CPUFloatType{2,2} ]</span></span></code></pre></div>
 <p>Thus acquainted with autograd, we’re ready to modify our example.</p>
 </div>
 <div class="section level2">
@@ -298,26 +289,26 @@ number of lines (that did manual backprop) are gone:</p>
 <span>    <span class="op">}</span><span class="op">)</span></span>
 <span>    </span>
 <span><span class="op">}</span></span>
-<span><span class="co">#&gt; 10 74.55167 </span></span>
-<span><span class="co">#&gt; 20 67.12614 </span></span>
-<span><span class="co">#&gt; 30 60.53729 </span></span>
-<span><span class="co">#&gt; 40 54.71684 </span></span>
-<span><span class="co">#&gt; 50 49.57658 </span></span>
-<span><span class="co">#&gt; 60 45.03249 </span></span>
-<span><span class="co">#&gt; 70 41.00504 </span></span>
-<span><span class="co">#&gt; 80 37.42916 </span></span>
-<span><span class="co">#&gt; 90 34.24844 </span></span>
-<span><span class="co">#&gt; 100 31.41621 </span></span>
-<span><span class="co">#&gt; 110 28.89119 </span></span>
-<span><span class="co">#&gt; 120 26.63914 </span></span>
-<span><span class="co">#&gt; 130 24.62467 </span></span>
-<span><span class="co">#&gt; 140 22.82187 </span></span>
-<span><span class="co">#&gt; 150 21.20589 </span></span>
-<span><span class="co">#&gt; 160 19.75542 </span></span>
-<span><span class="co">#&gt; 170 18.45185 </span></span>
-<span><span class="co">#&gt; 180 17.27832 </span></span>
-<span><span class="co">#&gt; 190 16.22069 </span></span>
-<span><span class="co">#&gt; 200 15.26622</span></span></code></pre></div>
+<span><span class="co">#&gt; 10 69.94962 </span></span>
+<span><span class="co">#&gt; 20 65.27933 </span></span>
+<span><span class="co">#&gt; 30 61.09248 </span></span>
+<span><span class="co">#&gt; 40 57.32251 </span></span>
+<span><span class="co">#&gt; 50 53.91897 </span></span>
+<span><span class="co">#&gt; 60 50.8359 </span></span>
+<span><span class="co">#&gt; 70 48.03501 </span></span>
+<span><span class="co">#&gt; 80 45.48116 </span></span>
+<span><span class="co">#&gt; 90 43.1411 </span></span>
+<span><span class="co">#&gt; 100 40.9949 </span></span>
+<span><span class="co">#&gt; 110 39.02061 </span></span>
+<span><span class="co">#&gt; 120 37.19971 </span></span>
+<span><span class="co">#&gt; 130 35.51634 </span></span>
+<span><span class="co">#&gt; 140 33.96445 </span></span>
+<span><span class="co">#&gt; 150 32.53105 </span></span>
+<span><span class="co">#&gt; 160 31.19854 </span></span>
+<span><span class="co">#&gt; 170 29.95638 </span></span>
+<span><span class="co">#&gt; 180 28.79594 </span></span>
+<span><span class="co">#&gt; 190 27.70997 </span></span>
+<span><span class="co">#&gt; 200 26.69294</span></span></code></pre></div>
 <p>We still manually compute the forward pass, and we still manually
 update the weights. In the last two chapters of this section, we’ll see
 how these parts of the logic can be made more modular and reusable, as
