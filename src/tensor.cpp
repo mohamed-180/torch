@@ -14,37 +14,30 @@ void cpp_torch_tensor_print(torch::Tensor x, int n) {
   std::vector<std::string> cont;
   size_t start = 0;
   size_t end;
-  while (1) {
+  int c = 0;
+  while (c <= n || n == -1) {
     std::string token;
     if ((end = s_string.find("\n", start)) == std::string::npos) {
       if (!(token = s_string.substr(start)).empty()) {
         cont.push_back(token);
       }
-
+      
       break;
     }
-
+    
     token = s_string.substr(start, end - start);
     cont.push_back(token);
     start = end + 1;
+    c += 1;
   }
-
-  bool truncated = false;
-  if (cont.size() > n && n > 1) {
-    cont.erase(cont.begin() + n, cont.end() - 1);
-    truncated = true;
-  }
-
+  
+  if (n != -1 && c >= 30) 
+    cont.push_back("... [the output was truncated (use n=-1 to disable)]\n");
+  
   std::string result;
-  for (int i = 0; i < cont.size(); i++) {
-    result += cont.at(i);
-
-    if (i != (cont.size() - 1)) result += "\n";
-
-    if (i == (cont.size() - 2) && truncated)
-      result += "... [the output was truncated (use n=-1 to disable)]\n";
-  }
-
+  for (std::vector<std::string>::const_iterator i = cont.begin(); i != cont.end(); ++i)
+    result += *i;  
+  
   Rcpp::Rcout << result;
 };
 
