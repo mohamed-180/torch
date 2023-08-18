@@ -39,7 +39,7 @@ void cpp_torch_tensor_print(torch::Tensor x, int n) {
     result += *i;  
   
   Rcpp::Rcout << result;
-};
+}
 
 // [[Rcpp::export]]
 torch::Tensor cpp_tensor_from_buffer(const SEXP& data, std::vector<int64_t> shape, XPtrTorchTensorOptions options) {
